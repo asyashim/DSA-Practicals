@@ -15,7 +15,7 @@ class LinkedList {
         return this.size === 0;
     }
 
-    // ✅ Append at end
+    
     append(value) {
         const node = new Node(value);
 
@@ -24,29 +24,29 @@ class LinkedList {
         } else {
             let current = this.head;
             while (current.next !== null) {
-                current = current.next;   // ❗ missing line fixed
+                current = current.next;   
             }
             current.next = node;
         }
         this.size++;
     }
 
-    // ✅ Reverse linked list (ITERATIVE)
+    
     reverse() {
         let prev = null;
         let curr = this.head;
 
         while (curr !== null) {
-            let next = curr.next; // store next node
-            curr.next = prev;     // reverse link
-            prev = curr;          // move prev
-            curr = next;          // move curr
+            let next = curr.next; 
+            curr.next = prev;     
+            prev = curr;          
+            curr = next;          
         }
 
         this.head = prev;
     }
 
-    // ✅ Print linked list
+    
     print() {
         if (this.isEmpty()) {
             console.log("List is empty");
@@ -71,8 +71,8 @@ list.append(10);
 list.append(20);
 list.append(30);
 
-list.print();     // 10 -> 20 -> 30 -> null
+list.print();     
 
 list.reverse();
 
-list.print();     // 30 -> 20 -> 10 -> null
+list.print();     
